@@ -17,39 +17,20 @@ export const theme = {
   },
   extend: {
     colors: {
-      border: "hsl(var(--border))",
-      input: "hsl(var(--input))",
-      ring: "hsl(var(--ring))",
       background: "hsl(var(--background))",
-      foreground: "hsl(var(--foreground))",
-      primary: {
-        DEFAULT: "hsl(var(--primary))",
-        foreground: "hsl(var(--primary-foreground))",
-      },
-      secondary: {
-        DEFAULT: "hsl(var(--secondary))",
-        foreground: "hsl(var(--secondary-foreground))",
-      },
-      destructive: {
-        DEFAULT: "hsl(var(--destructive))",
-        foreground: "hsl(var(--destructive-foreground))",
-      },
-      muted: {
-        DEFAULT: "hsl(var(--muted))",
-        foreground: "hsl(var(--muted-foreground))",
-      },
-      accent: {
-        DEFAULT: "hsl(var(--accent))",
-        foreground: "hsl(var(--accent-foreground))",
-      },
-      popover: {
-        DEFAULT: "hsl(var(--popover))",
-        foreground: "hsl(var(--popover-foreground))",
-      },
-      card: {
-        DEFAULT: "hsl(var(--card))",
-        foreground: "hsl(var(--card-foreground))",
-      },
+
+      primary: "hsl(var(--primary))",
+
+      secondary: "hsl(var(--secondary))",
+
+      black: "hsl(var(--black))",
+      "black-75": "hsl(var(--black-75))",
+      "black-50": "hsl(var(--black-50))",
+      "black-25": "hsl(var(--black-25))",
+      "black-10": "hsl(var(--black-10))",
+      "black-5": "hsl(var(--black-5))",
+
+      destructive: "hsl(var(--destructive))",
     },
     borderRadius: {
       lg: "var(--radius)",
@@ -69,6 +50,13 @@ export const theme = {
     animation: {
       "accordion-down": "accordion-down 0.2s ease-out",
       "accordion-up": "accordion-up 0.2s ease-out",
+    },
+    backgroundImage: {
+      hero: "url('/src/assets/images/backgrounds/hero-bg.jpg')",
+      "services-cards":
+        "url('/src/assets/images/backgrounds/services-card-bg.svg')",
+      "ant-why-us": "url('/src/assets/images/backgrounds/ant-why-us.svg')",
+      "ant-faq": "url('/src/assets/images/backgrounds/ant-faq-bg.svg')",
     },
   },
 };
