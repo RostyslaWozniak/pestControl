@@ -8,4 +8,4 @@ export const black50 = "#8A9398";
 export const black25 = "#C4C9CC";
 export const black10 = "#E8EAEB";
 export const black5 = "#F3F4F5";
-export const destructive = "#FF0000";
+export const destructive = "#c70014";

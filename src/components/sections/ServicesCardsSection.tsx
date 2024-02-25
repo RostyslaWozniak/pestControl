@@ -1,76 +1,79 @@
-import rodentImg from "../../assets/images/photos/services-rodent.jpg";
-import insectImg from "../../assets/images/photos/services-insects.jpg";
-import desinfectionImg from "../../assets/images/photos/services-desinfection.jpg";
+/* eslint-disable react-hooks/rules-of-hooks */
+
+import MaxWidthWraper from "../MaxWidthWraper";
 import { Card, CardTitle, CardContent, CardFooter } from "../ui/card";
 import { Button } from "../ui/button";
 import { CgArrowLongRight } from "react-icons/cg";
 import { cn } from "../../lib/cn";
-import MaxWidthWraper from "../MaxWidthWraper";
-const servicesCardData = [
-  {
-    id: 1,
-    img: rodentImg,
-    title: "Rodent Pest Control",
-    content:
-      "Rodents can cause significant damage to property, contaminate food supplies, and transmit diseases. Our rodent pest control service is designed to effectively eliminate rodent infestations and prevent their return.",
-    path: "#",
-  },
-  {
-    id: 2,
-    img: insectImg,
-    title: "Insect Disinfestation",
-    content:
-      "Insects can be a nuisance and a health hazard, invading homes and businesses. Our insect disinfestation service targets various types of insects to restore a pest-free environment.",
-    path: "#",
-  },
-  {
-    id: 3,
-    img: desinfectionImg,
-    title: "Disinfection",
-    content:
-      "Disinfection is a crucial step in maintaining a clean and healthy environment, especially in spaces where hygiene is paramount. Our disinfection services go beyond mere cleaning to ensure thorough elimination of harmful pathogens, including bacteria, viruses, and fungi.",
-    path: "#",
-  },
-];
+
+import { useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { servicesCardData } from "../../data/servicesCardData";
 
 const ServicesCardsSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
   return (
-    <section className="bg-services-cards space-y-20 bg-cover pb-80 pt-28">
-      <h2 className="text-black-75 text-center text-4xl font-bold">
+    <section
+      ref={ref}
+      className="space-y-20 bg-services-cards bg-cover pb-80 pt-28"
+    >
+      <h2 className="text-center text-4xl font-bold text-black-75">
         Our Services
       </h2>
       <MaxWidthWraper className="flex">
-        {servicesCardData.map(({ id, img, title, content, path }) => (
-          <Card
-            key={id}
-            className={cn(
-              "grid w-[400px] min-w-[400px] space-y-6 overflow-hidden rounded-[50px] border-2 border-background bg-primary shadow-xl duration-300 hover:z-10 hover:scale-[102%] hover:shadow-2xl",
-
-              id === 1 && "translate-x-20",
-              id === 2 && " translate-y-20",
-              id === 3 && "-translate-x-20 translate-y-40",
-            )}
-          >
-            <img src={img} alt={title} className="h-[350px] object-cover" />
-            <CardTitle className="px-10 text-3xl text-background">
-              {title}
-            </CardTitle>
-            <CardContent
-              className={cn("grid grow text-background", id !== 3 && "pr-20")}
-            >
-              <p>{content}</p>
-            </CardContent>
-            <CardFooter>
-              <Button variant={"outline"} className="group space-x-3">
-                <a href={path}>Learn more</a>
-                <CgArrowLongRight
-                  className="mt-1 transition-transform duration-200 group-hover:translate-x-4"
-                  size={30}
-                />
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+        {servicesCardData.map(
+          ({ id, img, title, content, path, paralaxY, paralaxX }) => {
+            const y = useTransform(scrollYProgress, [0, 1], [0, paralaxY]);
+            const x = useTransform(scrollYProgress, [1, 0], [0, paralaxX * id]);
+            return (
+              <motion.div
+                key={id}
+                style={{
+                  y: y,
+                  x: x,
+                }}
+              >
+                <Card
+                  className={cn(
+                    "grid w-[400px] min-w-[400px] space-y-6 overflow-hidden rounded-[50px] border-2 border-background bg-primary shadow-xl duration-300 hover:scale-[102%] hover:shadow-2xl",
+                  )}
+                >
+                  <img
+                    src={img}
+                    alt={title}
+                    className="h-[350px] object-cover"
+                  />
+                  <CardTitle className="px-10 text-3xl text-background">
+                    {title}
+                  </CardTitle>
+                  <CardContent
+                    className={cn(
+                      "grid grow text-background",
+                      id !== 3 && "pr-20",
+                    )}
+                  >
+                    <p>{content}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant={"outline"} className="group space-x-3">
+                      <a href={path}>Learn more</a>
+                      <CgArrowLongRight
+                        className="mt-1 transition-transform duration-200 group-hover:translate-x-4"
+                        size={30}
+                      />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            );
+          },
+        )}
       </MaxWidthWraper>
     </section>
   );

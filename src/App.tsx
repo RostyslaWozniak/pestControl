@@ -2,6 +2,7 @@
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
+import BeforAfterSection from "./components/sections/BeforAfterSection";
 import ContactSection from "./components/sections/ContactSection";
 import FAQSection from "./components/sections/FAQSection";
 import HeroSection from "./components/sections/Hero";
@@ -20,6 +21,7 @@ function App() {
         <WhyUsSection />
         <FAQSection />
         <ContactSection />
+        <BeforAfterSection />
       </main>
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import MaxWidthWraper from "../MaxWidthWraper";
 import photo from "../../assets/images/photos/why-us.jpg";
 import { FaCheck } from "react-icons/fa6";
+import Animate from "../Animation/Animate";
 
 const benefitsData = [
   { id: 1, content: "Expertise You Can Trust" },
@@ -16,13 +17,16 @@ const WhyUsSection = () => {
     <section className="space-y-10 bg-primary pb-10 pt-20 text-background">
       <h2 className=" text-center text-4xl  font-bold">Why Choose Us</h2>
       <MaxWidthWraper className="flex items-center">
-        <div className="w-[50%]">
+        <Animate direction="x" translate={-200} className="z-10 w-[50%]">
           <img src={photo} alt="inspector" className="w-full rounded-[50px]" />
-        </div>
-        <ul className="bg-ant-why-us space-y-5 bg-center  bg-no-repeat px-10 py-24">
+        </Animate>
+        <ul className="space-y-5 bg-ant-why-us bg-center  bg-no-repeat px-10 py-24">
           {benefitsData.map(({ id, content }) => (
             <li key={id} className="flex items-center gap-8 text-2xl">
-              <FaCheck size={30} />
+              <Animate direction="x" translate={-50} delay={0.1 * id}>
+                <FaCheck size={30} />
+              </Animate>
+
               <p>{content}</p>
             </li>
           ))}

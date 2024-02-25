@@ -24,7 +24,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="relative w-[50%] space-y-6 px-10 py-10"
+      className="relative w-[600px] space-y-6 px-10 py-10"
     >
       <NameInput errors={errors} register={register} />
       <EmailInput errors={errors} register={register} />

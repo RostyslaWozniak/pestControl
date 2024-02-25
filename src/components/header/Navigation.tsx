@@ -1,4 +1,5 @@
 import { cn } from "../../lib/cn";
+import { motion } from "framer-motion";
 
 const Navigation = ({ className }: { className?: string }) => {
   const navData = [
@@ -10,11 +11,23 @@ const Navigation = ({ className }: { className?: string }) => {
     <nav>
       <ul className={cn("flex items-center gap-10", className)}>
         {navData.map(({ id, path, name }) => (
-          <li key={id}>
+          <motion.li
+            initial={{
+              translateY: 30,
+              opacity: 0,
+            }}
+            whileInView={{
+              translateY: 0,
+              opacity: 1,
+            }}
+            transition={{ delay: id * 0.09 }}
+            viewport={{ once: true }}
+            key={id}
+          >
             <a className="cursor-pointer capitalize" href={path}>
               {name}
             </a>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </nav>
