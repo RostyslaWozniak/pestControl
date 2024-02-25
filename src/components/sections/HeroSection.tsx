@@ -9,17 +9,17 @@ const HeroSection = () => {
     <section className="bg-hero bg-no-repeat py-20">
       <MaxWidthWraper className="relative flex justify-end py-28">
         <div className=" w-[50%] space-y-8">
-          <Animate direction="x" translate={200} delay={0.5}>
+          <Animate direction="x" translate={200}>
             <h1 className="text-[31px] font-medium text-black-75">
               Say Goodbye to Pests with Our Expert Solutions
             </h1>
           </Animate>
-          <Animate direction="x" translate={200} delay={0.7}>
+          <Animate direction="x" translate={200} delay={0.2}>
             <h2 className="text-[61px] font-bold leading-[73px] text-primary">
               Pest Control Services
             </h2>
           </Animate>
-          <Animate direction="x" translate={200} delay={0.9}>
+          <Animate direction="x" translate={200} delay={0.4}>
             <p className=" text-black-75">
               Welcome to PestControl, where we specialize in providing top pest
               control solutions to ensure your peace of mind. Say goodbye to
@@ -27,7 +27,7 @@ const HeroSection = () => {
               tailored to your needs.
             </p>
           </Animate>
-          <Animate direction="y" translate={50} delay={1.1} duration={0.5}>
+          <Animate direction="y" translate={50} delay={0.6} duration={0.5}>
             <Button className="gap-5 ">
               Contact <FaPhoneAlt size={20} />
             </Button>

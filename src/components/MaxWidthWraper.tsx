@@ -4,7 +4,7 @@ type MaxWidthWraperProps = {
   children: React.ReactNode;
   className?: string;
 };
-const MaxWidthWraper = ({ children, className = "" }: MaxWidthWraperProps) => {
+const MaxWidthWraper = ({ children, className }: MaxWidthWraperProps) => {
   return (
     <div
       className={cn(

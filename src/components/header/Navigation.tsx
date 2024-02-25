@@ -1,12 +1,19 @@
+import { NavLink } from "react-router-dom";
 import { cn } from "../../lib/cn";
 import { motion } from "framer-motion";
 
+const navData = [
+  { id: 1, path: "/", name: "home" },
+  { id: 2, path: "/services", name: "services" },
+  { id: 3, path: "/about", name: "about us" },
+  { id: 4, path: "/contact", name: "contact us" },
+];
 const Navigation = ({ className }: { className?: string }) => {
-  const navData = [
-    { id: 1, path: "#", name: "services" },
-    { id: 2, path: "#", name: "about us" },
-    { id: 3, path: "#", name: "contact us" },
-  ];
+  const handleNavClick = () => {
+    scrollTo({
+      top: 0,
+    });
+  };
   return (
     <nav>
       <ul className={cn("flex items-center gap-10", className)}>
@@ -24,9 +31,13 @@ const Navigation = ({ className }: { className?: string }) => {
             viewport={{ once: true }}
             key={id}
           >
-            <a className="cursor-pointer capitalize" href={path}>
+            <NavLink
+              onClick={handleNavClick}
+              className="cursor-pointer capitalize"
+              to={path}
+            >
               {name}
-            </a>
+            </NavLink>
           </motion.li>
         ))}
       </ul>

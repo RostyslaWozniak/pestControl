@@ -5,7 +5,7 @@ import MaxWidthWraper from "../MaxWidthWraper";
 
 const images: [string, string] = [image1, image2];
 
-const BeforAfterSection = () => {
+const BeforeAfterSection = () => {
   return (
     <MaxWidthWraper className="my-20 space-y-10">
       <h2 className="text-center text-4xl font-bold text-black-75">
@@ -16,4 +16,4 @@ const BeforAfterSection = () => {
   );
 };
 
-export default BeforAfterSection;
+export default BeforeAfterSection;

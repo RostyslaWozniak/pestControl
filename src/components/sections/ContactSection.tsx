@@ -40,12 +40,16 @@ const ContactSection = () => {
   });
 
   return (
-    <section ref={ref} className="bg-primary py-28 text-background">
+    <section
+      ref={ref}
+      className="overflow-hidden bg-primary py-28 text-background"
+    >
       <MaxWidthWraper className="flex items-center gap-20">
         <motion.div
           className="w-[50%] space-y-20"
           style={{
             x: useTransform(scrollYProgress, [0, 0.4], [-300, 0]),
+            opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
           }}
         >
           <h2 className="text-center text-5xl font-bold text-background">
@@ -72,6 +76,7 @@ const ContactSection = () => {
         <motion.div
           style={{
             x: useTransform(scrollYProgress, [0, 0.4], [200, 0]),
+            opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
           }}
         >
           <Form />

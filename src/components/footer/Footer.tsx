@@ -8,10 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary p-5 text-white">
       <MaxWidthWraper className="flex items-center justify-between">
-        <div className="space-y-2 text-xl ">
-          <a href="#">Home</a>
-          <Navigation className="flex-col items-start gap-2" />
-        </div>
+        <Navigation className="flex-col items-start gap-2 text-xl" />
         <ul className="space-y-2">
           {contactElements.map(({ id, name, value, action }) => (
             <li key={id}>
