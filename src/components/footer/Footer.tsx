@@ -1,28 +1,19 @@
-import Navigation from "../header/Navigation";
 import SocialMediaIcons from "../header/SocialMediaIcons";
 import MaxWidthWraper from "../MaxWidthWraper";
-import { contactElements } from "../sections/ContactSection";
 import Map from "../Map";
+import FooterContact from "./FooterContact";
+import FooterNav from "./FooterNav";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary p-5 text-white">
-      <MaxWidthWraper className="flex items-center justify-between">
-        <Navigation className="flex-col items-start gap-2 text-xl" />
-        <ul className="space-y-2">
-          {contactElements.map(({ id, name, value, action }) => (
-            <li key={id}>
-              <a href={action} className="flex gap-5">
-                <span className="font-bold capitalize">{name}: </span>
-                <p>{value}</p>
-              </a>
-            </li>
-          ))}
-        </ul>
+    <footer className="bg-secondary py-5 text-white">
+      <MaxWidthWraper className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+        <FooterNav />
+        <FooterContact />
         <Map />
         <SocialMediaIcons
           iconSize={30}
-          className="flex-col items-start gap-5"
+          className="items-start gap-5 self-center lg:flex-col"
         />
       </MaxWidthWraper>
     </footer>

@@ -7,6 +7,8 @@ import Form from "../contactForm/Form";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { smWith } from "../../helpers/globalVariabels";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const contactElements = [
@@ -38,23 +40,25 @@ const ContactSection = () => {
     target: ref,
     offset: ["start end", "end start"],
   });
-
+  const { windowWidth } = useWindowDimensions();
+  const x = useTransform(scrollYProgress, [0, 0.4], [200, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
   return (
     <section
       ref={ref}
       className="overflow-hidden bg-primary py-28 text-background"
     >
-      <MaxWidthWraper className="flex items-center gap-20">
+      <h2 className="text-center text-5xl font-bold text-background">
+        Contact Us
+      </h2>
+      <MaxWidthWraper className="flex flex-col-reverse items-center gap-20 xl:flex-row">
         <motion.div
-          className="w-[50%] space-y-20"
+          className="mx-auto space-y-20 lg:w-[50%]"
           style={{
             x: useTransform(scrollYProgress, [0, 0.4], [-300, 0]),
             opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
           }}
         >
-          <h2 className="text-center text-5xl font-bold text-background">
-            Contact Us
-          </h2>
           <p className="text-xl">
             We're here to help you reclaim your space from pests and create a
             healthier environment for you and your family or business. Reach out
@@ -62,9 +66,12 @@ const ContactSection = () => {
             services. Our friendly team is ready to assist you with any
             questions or concerns you may have.
           </p>
-          <ul className="grid grid-cols-3 gap-5">
+          <ul className="grid grid-cols-1 gap-10 sm:grid-cols-3">
             {contactElements.map(({ id, value, icon, action }) => (
-              <li key={id} className="flex flex-col items-center space-y-5">
+              <li
+                key={id}
+                className="flex flex-col items-center space-y-5 text-center"
+              >
                 {icon}
                 <a className="text-xl text-black-5" href={action}>
                   {value}
@@ -73,14 +80,19 @@ const ContactSection = () => {
             ))}
           </ul>
         </motion.div>
-        <motion.div
-          style={{
-            x: useTransform(scrollYProgress, [0, 0.4], [200, 0]),
-            opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
-          }}
-        >
+        {windowWidth < smWith ? (
           <Form />
-        </motion.div>
+        ) : (
+          <motion.div
+            className="w-full lg:w-[50%]"
+            style={{
+              x,
+              opacity,
+            }}
+          >
+            <Form />
+          </motion.div>
+        )}
       </MaxWidthWraper>
     </section>
   );

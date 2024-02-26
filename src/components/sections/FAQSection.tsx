@@ -9,17 +9,20 @@ const FAQSection = () => {
     { id: 3, name: "pricing" },
   ];
   return (
-    <section className="space-y-20 py-28">
-      <h2 className="text-black-75 text-center text-4xl font-bold">
+    <section className="py-28 sm:space-y-20">
+      <h2 className="text-center text-3xl font-bold text-black-75 sm:text-4xl">
         Frequently Asked Questions (FAQ)
       </h2>
-      <MaxWidthWraper className="bg-ant-faq flex  justify-end bg-no-repeat">
-        <Tabs defaultValue="all" className="min-h-[560px] w-[50%] space-y-10">
-          <TabsList className="bg-black-10 gap-5 rounded-[50px] px-2 py-7">
+      <MaxWidthWraper className="flex bg-no-repeat  lg:justify-end lg:bg-ant-faq">
+        <Tabs
+          defaultValue="all"
+          className="mx-auto min-h-[560px] w-[min(600px,100%)] space-y-10 lg:mx-0 lg:w-[50%]"
+        >
+          <TabsList className="hidden gap-5 rounded-[50px] bg-black-10 px-2 py-7 sm:flex">
             {tabsData.map(({ id, name }) => (
               <TabsTrigger
                 key={id}
-                className="hover:bg-black-5 text-black-75 rounded-[50px] px-8 text-xl capitalize duration-300 data-[state=active]:bg-primary data-[state=active]:text-background"
+                className="rounded-[50px] px-8 text-xl capitalize text-black-75 duration-300 hover:bg-black-5 data-[state=active]:bg-primary data-[state=active]:text-background"
                 value={name}
               >
                 {name}

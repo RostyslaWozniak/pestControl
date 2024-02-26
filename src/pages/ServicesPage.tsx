@@ -1,6 +1,6 @@
 import ContactSection from "../components/sections/ContactSection";
 import OrderStepsSection from "../components/sections/OrderStepsSection";
-import ServicesCardsSection from "../components/sections/ServicesCardsSection";
+import ServicesCardsSection from "../components/sections/ServicesCardsSection/ServicesCardsSection";
 
 const ServicesPage = () => {
   return (

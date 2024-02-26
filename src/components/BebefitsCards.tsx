@@ -1,5 +1,6 @@
-import { Card, CardTitle, CardContent } from "./ui/card";
 import { cn } from "../lib/cn";
+import MaxWidthWraper from "./MaxWidthWraper";
+import Animate from "./Animation/Animate";
 const benefitData = [
   {
     id: 1,
@@ -23,23 +24,27 @@ const benefitData = [
 
 const BenefitsCards = () => {
   return (
-    <div className="flex justify-center gap-16">
-      {benefitData.map(({ id, title, content }) => (
-        <Card
-          key={id}
-          className={cn(
-            "w-[350px] space-y-8 rounded-[50px] bg-gradient-to-b from-white to-blue-50 py-6 text-center shadow-xl",
-          )}
-        >
-          <CardTitle className="text-medium text-2xl text-black">
-            {title}
-          </CardTitle>
-          <CardContent>
-            <p className="text-black-75">{content}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <MaxWidthWraper className="relative">
+      <div className="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {benefitData.map(({ id, title, content }) => (
+          <Animate
+            direction="y"
+            delay={id * 0.1}
+            translate={100}
+            key={id}
+            className={cn(
+              "h-full w-[min(350px,100%)] space-y-4 rounded-[50px] border border-black-10 bg-gradient-to-b from-white to-blue-50 px-5 py-6 text-center shadow-xl md:space-y-8",
+            )}
+          >
+            <h3 className="text-medium text-xl text-black md:text-2xl">
+              {title}
+            </h3>
+
+            <p className="text-sm text-black-75 md:text-base">{content}</p>
+          </Animate>
+        ))}
+      </div>
+    </MaxWidthWraper>
   );
 };
 

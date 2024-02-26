@@ -2,6 +2,8 @@ import MaxWidthWraper from "../MaxWidthWraper";
 import photo from "../../assets/images/photos/why-us.jpg";
 import { FaCheck } from "react-icons/fa6";
 import Animate from "../Animation/Animate";
+import { smWith } from "../../helpers/globalVariabels";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const benefitsData = [
   { id: 1, content: "Expertise You Can Trust" },
@@ -13,18 +15,32 @@ const benefitsData = [
 ];
 
 const WhyUsSection = () => {
+  const { windowWidth } = useWindowDimensions();
   return (
-    <section className="space-y-10 bg-primary pb-10 pt-20 text-background">
-      <h2 className=" text-center text-4xl  font-bold">Why Choose Us</h2>
+    <section className="bg-primary  pt-20 text-background sm:space-y-10">
+      <h2 className=" text-center text-3xl font-bold  sm:text-4xl">
+        Why Choose Us
+      </h2>
       <MaxWidthWraper className="flex items-center">
-        <Animate direction="x" translate={-200} className="z-10 w-[50%]">
-          <img src={photo} alt="inspector" className="w-full rounded-[50px]" />
+        <Animate
+          direction="x"
+          translate={-200}
+          className="z-10 hidden w-[50%]  lg:block"
+        >
+          <img
+            src={photo}
+            alt="inspector"
+            className="h-[400px] w-full rounded-[50px] object-cover"
+          />
         </Animate>
-        <ul className="space-y-5 bg-ant-why-us bg-center  bg-no-repeat px-10 py-24">
+        <ul className="flex h-[550px] flex-col items-start justify-center space-y-5 bg-ant-why-us bg-top bg-no-repeat sm:px-10">
           {benefitsData.map(({ id, content }) => (
-            <li key={id} className="flex items-center gap-8 text-2xl">
-              <Animate direction="x" translate={-50} delay={0.1 * id}>
-                <FaCheck size={30} />
+            <li
+              key={id}
+              className="flex items-center gap-4 text-xl sm:gap-8 sm:text-2xl"
+            >
+              <Animate direction="x" translate={-10} delay={0.1 * id}>
+                <FaCheck size={windowWidth < smWith ? 20 : 30} />
               </Animate>
 
               <p>{content}</p>

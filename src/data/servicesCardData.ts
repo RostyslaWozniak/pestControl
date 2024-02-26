@@ -9,7 +9,7 @@ export const servicesCardData = [
     content:
       "Rodents can cause significant damage to property, contaminate food supplies, and transmit diseases. Our rodent pest control service is designed to effectively eliminate rodent infestations and prevent their return.",
     path: "#",
-    paralaxX: 80,
+    paralaxX: 140,
     paralaxY: 0,
   },
   {

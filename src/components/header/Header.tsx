@@ -1,18 +1,31 @@
-import Navigation from "./Navigation";
 import MaxWidthWraper from "../MaxWidthWraper";
 import Logo from "./logo/Logo";
 import SocialMediaIcons from "./SocialMediaIcons";
-import { secondary } from "../../helpers/globalVariabels";
+import { secondaryColor } from "../../helpers/globalVariabels";
+import BurgerBtn from "../ui/BurgerBtn";
+
+import HeaderNav from "./Navigation/HeaderNav";
+import { NavContextProvider } from "../../context/NavContext";
 
 const Header = () => {
   return (
-    <header className=" absolute w-full bg-gray-200/80">
-      <MaxWidthWraper className="flex h-16 items-center justify-between">
-        <Logo className="text-secondary" />
-        <Navigation className="font-medium" />
-        <SocialMediaIcons iconsColor={secondary} iconSize={20} isDevided />
-      </MaxWidthWraper>
-    </header>
+    <NavContextProvider>
+      <header className="fixed z-30 w-full  bg-gray-200/80">
+        <MaxWidthWraper className="flex h-16 items-center justify-between">
+          <Logo className="text-secondary" />
+          <HeaderNav />
+          <div className="flex gap-5">
+            <SocialMediaIcons
+              iconsColor={secondaryColor}
+              iconSize={20}
+              isDevided
+              className="hidden sm:flex"
+            />
+            <BurgerBtn />
+          </div>
+        </MaxWidthWraper>
+      </header>
+    </NavContextProvider>
   );
 };
 

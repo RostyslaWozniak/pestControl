@@ -3,7 +3,11 @@ import { cn } from "../../../lib/cn";
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <Link className={cn("text-2xl font-medium", className)} to="/">
+    <Link
+      onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
+      className={cn("text-2xl font-medium", className)}
+      to="/"
+    >
       PestControl
     </Link>
   );
