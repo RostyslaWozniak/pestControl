@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./assets/index.css";
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   RouterProvider,
   Route,
@@ -15,7 +15,7 @@ import ServicesPage from "./pages/ServicesPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<HomePage />} />
