@@ -24,7 +24,10 @@ const benefitData = [
 
 const BenefitsCards = ({ className }: { className?: string }) => {
   return (
-    <MaxWidthWraper className={cn("relative", className)}>
+    <MaxWidthWraper className={cn("relative space-y-16", className)}>
+      <h2 className="text-center text-3xl font-bold text-black-75 sm:text-4xl">
+        Benefits
+      </h2>
       <div className="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
         {benefitData.map(({ id, title, content }) => (
           <Animate
