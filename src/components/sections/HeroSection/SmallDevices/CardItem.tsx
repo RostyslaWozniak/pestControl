@@ -1,5 +1,5 @@
-import { cn } from "../../../lib/cn";
-import { Button } from "../../ui/button";
+import { cn } from "../../../../lib/cn";
+import { Button } from "../../../ui/button";
 import { CgArrowLongRight } from "react-icons/cg";
 
 type SmCardItemProps = {
@@ -9,7 +9,7 @@ type SmCardItemProps = {
   path: string;
 };
 
-const SmCardItem = ({ img, title, content, path }: SmCardItemProps) => {
+const CardItem = ({ img, title, content, path }: SmCardItemProps) => {
   return (
     <div
       className={cn(
@@ -37,4 +37,4 @@ const SmCardItem = ({ img, title, content, path }: SmCardItemProps) => {
   );
 };
 
-export default SmCardItem;
+export default CardItem;

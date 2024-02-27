@@ -3,8 +3,8 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "./ui/resizable";
-import { cn } from "../lib/cn";
+} from "../../ui/resizable";
+import { cn } from "../../../lib/cn";
 
 type ResizableProps = {
   images: [

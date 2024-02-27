@@ -22,7 +22,7 @@ const NavigationList = ({ className, navData }: NavigationListProps) => {
   return (
     <motion.ul
       variants={variants}
-      className={cn("flex items-center gap-5", className)}
+      className={cn("flex items-center gap-y-10", className)}
     >
       {navData.map((props) => (
         <NavItem key={props.id} {...props} />

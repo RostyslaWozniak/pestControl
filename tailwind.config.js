@@ -57,6 +57,7 @@ export const theme = {
         "url('/src/assets/images/backgrounds/services-card-bg.svg')",
       "ant-why-us": "url('/src/assets/images/backgrounds/ant-why-us.svg')",
       "ant-faq": "url('/src/assets/images/backgrounds/ant-faq-bg.svg')",
+      gradient: "linear-gradient(to left, #cffafe, #dbeafe)",
     },
   },
 };

@@ -1,4 +1,4 @@
-import BeforeAfterSection from "../components/sections/BeforeAfterSection";
+import BeforeAfterSection from "../components/sections/BeforAndAfter/BeforeAfterSection";
 import ContactSection from "../components/sections/ContactSection";
 import WhyUsSection from "../components/sections/WhyUsSection";
 

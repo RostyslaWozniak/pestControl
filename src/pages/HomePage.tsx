@@ -1,15 +1,17 @@
 import ContactSection from "../components/sections/ContactSection";
-import FAQSection from "../components/sections/FAQSection";
-import HeroSection from "../components/sections/HeroSection";
+import FAQSection from "../components/sections/FAQSection/FAQSection";
+import HeroSection from "../components/sections/HeroSection/SmallDevices/HeroSection";
+import { HeroParallax } from "../components/sections/HeroSection/Parallax/ParalaxHero";
 import OrderStepsSection from "../components/sections/OrderStepsSection";
-import ServicesCardsSection from "../components/sections/ServicesCardsSection/ServicesCardsSection";
 import WhyUsSection from "../components/sections/WhyUsSection";
+import { lgWidth } from "../helpers/globalVariabels";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const HomePage = () => {
+  const { windowWidth } = useWindowDimensions();
   return (
     <>
-      <HeroSection />
-      <ServicesCardsSection />
+      {windowWidth < lgWidth ? <HeroSection /> : <HeroParallax />}
       <OrderStepsSection />
       <WhyUsSection />
       <FAQSection />

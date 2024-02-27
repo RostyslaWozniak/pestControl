@@ -1,6 +1,6 @@
-import MaxWidthWraper from "../MaxWidthWraper";
-import FAQAccordion from "../FAQAccordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import MaxWidthWraper from "../../MaxWidthWraper";
+import FAQAccordion from "./FAQAccordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 
 const FAQSection = () => {
   const tabsData = [
@@ -18,7 +18,7 @@ const FAQSection = () => {
           defaultValue="all"
           className="mx-auto min-h-[560px] w-[min(600px,100%)] space-y-10 lg:mx-0 lg:w-[50%]"
         >
-          <TabsList className="hidden gap-5 rounded-[50px] bg-black-10 px-2 py-7 sm:flex">
+          <TabsList className="bg-gradient hidden gap-5 rounded-[50px] px-2 py-7 sm:flex">
             {tabsData.map(({ id, name }) => (
               <TabsTrigger
                 key={id}

@@ -4,8 +4,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
-import { TFaqData, faqData } from "../data/faqData";
+} from "../../ui/accordion";
+import { TFaqData, faqData } from "../../../data/faqData";
 import { motion } from "framer-motion";
 
 const FAQAccordion = ({ type }: { type: string }) => {

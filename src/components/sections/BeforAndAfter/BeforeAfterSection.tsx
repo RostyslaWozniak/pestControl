@@ -1,7 +1,7 @@
-import Resizable from "../Resizable";
-import image1 from "../../assets/images/photos/services-desinfection.jpg";
-import image2 from "../../assets/images/photos/why-us.jpg";
-import MaxWidthWraper from "../MaxWidthWraper";
+import MaxWidthWraper from "../../MaxWidthWraper";
+import Resizable from "./Resizable";
+import image1 from "/src/assets/images/photos/services-desinfection.jpg";
+import image2 from "/src/assets/images/photos/why-us.jpg";
 
 const images: [{ alt: string; img: string }, { alt: string; img: string }] = [
   { alt: "", img: image1 },

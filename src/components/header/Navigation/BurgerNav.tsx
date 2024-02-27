@@ -4,6 +4,7 @@ import { navData } from "../../../data/navData";
 import { useNavContext } from "../../../context/NavContext";
 import SocialMediaIcons from "../SocialMediaIcons";
 import { backgroundColor } from "../../../helpers/globalVariabels";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const navSidebar = {
   open: (windowHeight = 1000) => ({
@@ -27,25 +28,33 @@ const navSidebar = {
 
 const BurgerNav = () => {
   const { isBurgerNavActive } = useNavContext();
+  const { windowHeight } = useWindowDimensions();
   return (
-    <motion.div
-      className="fixed bottom-0 right-0 top-0 w-[min(450px,100%)] bg-secondary"
-      variants={navSidebar}
+    <motion.nav
+      initial={false}
+      animate={isBurgerNavActive ? "open" : "closed"}
+      custom={windowHeight}
+      className=" font-medium"
     >
-      {isBurgerNavActive && (
-        <>
-          <NavigationList
-            navData={navData}
-            className="absolute left-1/2 top-[100px] -translate-x-1/2 flex-col text-2xl text-background aria-[current=page]:border-background lg:static"
-          />
-          <SocialMediaIcons
-            iconSize={40}
-            iconsColor={backgroundColor}
-            className="absolute bottom-5 left-1/2 -translate-x-1/2"
-          />
-        </>
-      )}
-    </motion.div>
+      <motion.div
+        className="fixed bottom-0 right-0 top-0 w-[min(450px,100%)] bg-secondary"
+        variants={navSidebar}
+      >
+        {isBurgerNavActive && (
+          <>
+            <NavigationList
+              navData={navData}
+              className=" absolute left-1/2 top-[100px] -translate-x-1/2 flex-col text-2xl text-background"
+            />
+            <SocialMediaIcons
+              iconSize={40}
+              iconsColor={backgroundColor}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            />
+          </>
+        )}
+      </motion.div>
+    </motion.nav>
   );
 };
 

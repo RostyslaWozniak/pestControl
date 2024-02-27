@@ -1,5 +1,5 @@
 import ContactSection from "../components/sections/ContactSection";
-import FAQSection from "../components/sections/FAQSection";
+import FAQSection from "../components/sections/FAQSection/FAQSection";
 
 const ContactPage = () => {
   return (
