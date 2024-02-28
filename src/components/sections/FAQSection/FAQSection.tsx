@@ -1,6 +1,7 @@
 import MaxWidthWraper from "../../MaxWidthWraper";
 import FAQAccordion from "./FAQAccordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
+import Heading from "../../ui/heading";
 
 const FAQSection = () => {
   const tabsData = [
@@ -9,11 +10,9 @@ const FAQSection = () => {
     { id: 3, name: "pricing" },
   ];
   return (
-    <section className="py-28 sm:space-y-20">
-      <h2 className="text-center text-3xl font-bold text-black-75 sm:text-4xl">
-        Frequently Asked Questions (FAQ)
-      </h2>
-      <MaxWidthWraper className="flex bg-no-repeat  lg:justify-end lg:bg-ant-faq">
+    <section className="bg-left bg-no-repeat py-20  sm:space-y-20 lg:bg-ant-faq">
+      <Heading>Frequently Asked Questions (FAQ)</Heading>
+      <MaxWidthWraper className="flex  lg:justify-end ">
         <Tabs
           defaultValue="all"
           className="mx-auto min-h-[560px] w-[min(600px,100%)] space-y-10 lg:mx-0 lg:w-[50%]"
@@ -22,7 +21,7 @@ const FAQSection = () => {
             {tabsData.map(({ id, name }) => (
               <TabsTrigger
                 key={id}
-                className="rounded-[50px] px-8 text-xl capitalize text-black-75 duration-300 hover:bg-black-5 data-[state=active]:bg-background data-[state=active]:text-secondary"
+                className="rounded-[50px] px-8 text-xl capitalize text-black-75 duration-300 data-[state=active]:bg-background "
                 value={name}
               >
                 {name}

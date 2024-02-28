@@ -1,4 +1,4 @@
-import { contactElements } from "../sections/ContactSection";
+import { contactElements } from "../sections/Contact/ContactSection";
 
 const FooterContact = () => {
   return (

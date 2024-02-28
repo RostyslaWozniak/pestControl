@@ -1,5 +1,5 @@
-import { cn } from "../../lib/cn";
-import { InputProps } from "../../lib/formZod";
+import { cn } from "../../../../lib/cn";
+import { InputProps } from "../../../../lib/formZod";
 
 const MessageInput = ({ register, errors }: InputProps) => {
   return (

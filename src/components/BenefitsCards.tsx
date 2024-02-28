@@ -1,33 +1,13 @@
 import { cn } from "../lib/cn";
 import MaxWidthWraper from "./MaxWidthWraper";
 import Animate from "./Animation/Animate";
-const benefitData = [
-  {
-    id: 1,
-    title: "Effective Solutions",
-    content:
-      "Our team of skilled professionals utilizes advanced techniques and eco-friendly products to eliminate pests effectively and efficiently.",
-  },
-  {
-    id: 2,
-    title: "Personalized Approach",
-    content:
-      "We recognize that every pest problem is different. That's why we take a personalized approach, crafting solutions specifically designed to address your concerns and provide lasting relief.",
-  },
-  {
-    id: 3,
-    title: "Certified Experts",
-    content:
-      "With our licensed and experienced technicians at the helm, you can trust that your pest control needs are in capable hands. Our team stays abreast of the latest industry advancements to deliver unparalleled service.",
-  },
-];
+import Heading from "./ui/heading";
+import { benefitData } from "../data/benefitCardsData";
 
 const BenefitsCards = ({ className }: { className?: string }) => {
   return (
-    <MaxWidthWraper className={cn("relative space-y-16", className)}>
-      <h2 className="text-center text-3xl font-bold text-black-75 sm:text-4xl">
-        Our Benefits
-      </h2>
+    <MaxWidthWraper className={cn("relative my-20 space-y-16", className)}>
+      <Heading>Our Benefits</Heading>
       <div className="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
         {benefitData.map(({ id, title, content }) => (
           <Animate

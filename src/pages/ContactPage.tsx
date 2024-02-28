@@ -1,10 +1,10 @@
-import ContactSection from "../components/sections/ContactSection";
-import FAQSection from "../components/sections/FAQSection/FAQSection";
+import BenefitsCards from "../components/BenefitsCards";
+import ContactSection from "../components/sections/Contact/ContactSection";
 
 const ContactPage = () => {
   return (
     <div className="mt-16">
-      <FAQSection />
+      <BenefitsCards />
       <ContactSection />
     </div>
   );

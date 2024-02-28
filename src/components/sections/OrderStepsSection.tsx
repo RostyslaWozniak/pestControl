@@ -1,5 +1,6 @@
 import Animate from "../Animation/Animate";
 import MaxWidthWraper from "../MaxWidthWraper";
+import Heading from "../ui/heading";
 const orderStepsData = [
   {
     id: 1,
@@ -35,11 +36,9 @@ const orderStepsData = [
 ];
 const OrderStepsSection = () => {
   return (
-    <section className="overflow-hidden pb-40 pt-20">
+    <section className="overflow-hidden py-20">
       <MaxWidthWraper className="space-y-20">
-        <h2 className="text-center text-3xl font-bold text-black-75 sm:text-4xl">
-          6 Easy Steps to Order Our Services
-        </h2>
+        <Heading className="">6 Easy Steps to Order Our Services</Heading>
         <div className="grid grid-cols-1 gap-14 sm:grid-cols-2  sm:gap-x-20 sm:gap-y-32 md:grid-cols-3">
           {orderStepsData.map(({ id, title, content }) => (
             <Animate

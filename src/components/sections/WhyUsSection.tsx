@@ -4,6 +4,7 @@ import { FaCheck } from "react-icons/fa6";
 import Animate from "../Animation/Animate";
 import { smWith } from "../../helpers/globalVariabels";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import Heading from "../ui/heading";
 
 const benefitsData = [
   { id: 1, content: "Expertise You Can Trust" },
@@ -18,9 +19,7 @@ const WhyUsSection = () => {
   const { windowWidth } = useWindowDimensions();
   return (
     <section className="bg-primary  pt-20 text-background sm:space-y-10">
-      <h2 className=" text-center text-3xl font-bold  sm:text-4xl">
-        Why Choose Us
-      </h2>
+      <Heading className="text-background">Why Choose Us</Heading>
       <MaxWidthWraper className="flex items-center">
         <Animate
           direction="x"

@@ -1,5 +1,5 @@
 import BeforeAfterSection from "../components/sections/BeforAndAfter/BeforeAfterSection";
-import ContactSection from "../components/sections/ContactSection";
+import ContactSection from "../components/sections/Contact/ContactSection";
 import WhyUsSection from "../components/sections/WhyUsSection";
 
 const AboutPage = () => {

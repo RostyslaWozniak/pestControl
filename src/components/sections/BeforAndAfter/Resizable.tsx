@@ -22,20 +22,20 @@ const Resizable = ({ images }: ResizableProps) => {
   return (
     <ResizablePanelGroup
       direction="horizontal"
-      className="min-h-[720px] w-full bg-black-25"
+      className="min-h-[500px] bg-black-25 sm:rounded-[50px]"
     >
       {images.map(({ alt, img }, index) => (
         <React.Fragment key={index}>
           <ResizablePanel
             defaultSize={index === 0 ? 25 : 75}
             key={index}
-            className="relative min-w-5 overflow-hidden lg:min-w-[200px]"
+            className="relative min-w-5 overflow-hidden sm:min-w-[200px] lg:min-w-[50px]"
           >
             <img
               src={img}
               alt={alt}
               className={cn(
-                "absolute h-full w-full object-cover brightness-75",
+                "absolute h-full w-full object-cover object-center",
                 index === 1 && "object-right",
                 index === 0 && "object-left",
               )}

@@ -1,14 +1,16 @@
-import { address, email, phoneNumber } from "../../data/contactData";
-import MaxWidthWraper from "../MaxWidthWraper";
+import { address, email, phoneNumber } from "../../../data/contactData";
+import MaxWidthWraper from "../../MaxWidthWraper";
 import { CiLocationOn } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
-import Form from "../contactForm/Form";
+import Form from "./contactForm/Form";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import { smWith } from "../../helpers/globalVariabels";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import { smWith } from "../../../helpers/globalVariabels";
+import Text from "../../ui/text";
+import Heading from "../../ui/heading";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const contactElements = [
@@ -48,9 +50,7 @@ const ContactSection = () => {
       ref={ref}
       className="overflow-hidden bg-primary py-20 text-background"
     >
-      <h2 className="mb-5 text-center text-4xl font-bold text-background sm:text-5xl">
-        Contact Us
-      </h2>
+      <Heading className="mb-5 text-background">Contact Us</Heading>
       <MaxWidthWraper className="flex flex-col-reverse items-center lg:gap-10 xl:flex-row">
         <motion.div
           className="mx-auto w-[min(600px,100%)] space-y-10 pt-4 xl:w-[50%]"
@@ -59,13 +59,13 @@ const ContactSection = () => {
             opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
           }}
         >
-          <p className="indent-10 text-lg">
+          <Text>
             We're here to help you reclaim your space from pests and create a
             healthier environment for you and your family or business. Reach out
             to us today to schedule an appointment or inquire about our
             services. Our friendly team is ready to assist you with any
             questions or concerns you may have.
-          </p>
+          </Text>
           <ul className="flex flex-col space-y-8">
             {contactElements.map(({ id, value, icon, action }) => (
               <li key={id} className="rounded-full bg-gradient p-0.5">

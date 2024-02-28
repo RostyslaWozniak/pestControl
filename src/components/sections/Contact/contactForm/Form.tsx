@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { TFormSchema, formSchema } from "../../lib/formZod";
+import { TFormSchema, formSchema } from "../../../../lib/formZod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "../ui/button";
+import { Button } from "../../../ui/button";
 import NameInput from "./NameInput";
 import EmailInput from "./EmailInput";
 import MessageInput from "./MessageInput";

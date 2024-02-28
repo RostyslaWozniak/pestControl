@@ -1,4 +1,4 @@
-import ContactSection from "../components/sections/ContactSection";
+import ContactSection from "../components/sections/Contact/ContactSection";
 import FAQSection from "../components/sections/FAQSection/FAQSection";
 import HeroSection from "../components/sections/HeroSection/SmallDevices/HeroSection";
 import { HeroParallax } from "../components/sections/HeroSection/Parallax/ParalaxHero";
