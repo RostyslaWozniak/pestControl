@@ -18,11 +18,11 @@ const FAQSection = () => {
           defaultValue="all"
           className="mx-auto min-h-[560px] w-[min(600px,100%)] space-y-10 lg:mx-0 lg:w-[50%]"
         >
-          <TabsList className="bg-gradient hidden gap-5 rounded-[50px] px-2 py-7 sm:flex">
+          <TabsList className="hidden gap-5 rounded-[50px] bg-gradient px-2 py-7 sm:flex">
             {tabsData.map(({ id, name }) => (
               <TabsTrigger
                 key={id}
-                className="rounded-[50px] px-8 text-xl capitalize text-black-75 duration-300 hover:bg-black-5 data-[state=active]:bg-primary data-[state=active]:text-background"
+                className="rounded-[50px] px-8 text-xl capitalize text-black-75 duration-300 hover:bg-black-5 data-[state=active]:bg-background data-[state=active]:text-secondary"
                 value={name}
               >
                 {name}
