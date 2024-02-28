@@ -29,7 +29,7 @@ const Form = () => {
       <NameInput errors={errors} register={register} />
       <EmailInput errors={errors} register={register} />
       <MessageInput errors={errors} register={register} />
-      <Button type="submit" variant={"secondary"} className="self-end py-5">
+      <Button type="submit" variant={"secondary"} className="self-end">
         {isSubmitting ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (

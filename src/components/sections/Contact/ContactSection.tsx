@@ -59,7 +59,7 @@ const ContactSection = () => {
             opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1]),
           }}
         >
-          <Text>
+          <Text className="">
             We're here to help you reclaim your space from pests and create a
             healthier environment for you and your family or business. Reach out
             to us today to schedule an appointment or inquire about our
@@ -68,10 +68,13 @@ const ContactSection = () => {
           </Text>
           <ul className="flex flex-col space-y-8">
             {contactElements.map(({ id, value, icon, action }) => (
-              <li key={id} className="rounded-full bg-gradient p-0.5">
+              <li key={id} className="rounded-full bg-gradient p-[3px]">
                 <div className=" flex items-center space-x-10 rounded-full bg-primary py-1 pl-5 lg:space-x-20">
                   {icon}
-                  <a className="sm:text-2xl " href={action}>
+                  <a
+                    className="font-bold sm:text-2xl sm:font-normal"
+                    href={action}
+                  >
                     {value}
                   </a>
                 </div>
