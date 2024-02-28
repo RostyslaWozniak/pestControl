@@ -24,16 +24,12 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="relative mx-auto w-[min(600px,100%)] space-y-6 py-10 lg:px-10"
+      className="relative mx-auto flex w-[min(600px,100%)] flex-col space-y-6 py-10 lg:px-10"
     >
       <NameInput errors={errors} register={register} />
       <EmailInput errors={errors} register={register} />
       <MessageInput errors={errors} register={register} />
-      <Button
-        type="submit"
-        variant={"secondary"}
-        className="absolute right-10 translate-y-2 py-5"
-      >
+      <Button type="submit" variant={"secondary"} className="self-end py-5">
         {isSubmitting ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
