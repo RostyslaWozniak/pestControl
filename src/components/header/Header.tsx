@@ -11,8 +11,8 @@ import Navigation from "./Navigation/Navigation";
 const Header = () => {
   return (
     <NavContextProvider>
-      <header className="bg-gradient fixed z-30 w-full">
-        <MaxWidthWraper className="flex h-16 items-center justify-between">
+      <header className="fixed z-30 w-full bg-gradient">
+        <MaxWidthWraper className="flex h-16 items-center justify-between  text-secondary">
           <Logo className="text-secondary" />
           <Navigation />
           <div className="flex gap-5">
