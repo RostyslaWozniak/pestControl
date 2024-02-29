@@ -15,16 +15,21 @@ const FAQAccordion = ({ type }: { type: string }) => {
     setFiltratedQuestions(faqData.filter((question) => question.type === type));
   }, [type]);
   return (
-    <motion.div layout>
-      <Accordion type="single" collapsible>
-        {filtratedQuestions.map(({ id, question, answer }) => (
-          <AccordionItem value={`item-${id}`} key={id}>
+    <Accordion type="single" collapsible>
+      {filtratedQuestions.map(({ id, question, answer }, index) => (
+        <motion.div
+          key={id}
+          initial={{ opacity: 0, translateY: 100 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <AccordionItem value={`item-${id}`}>
             <AccordionTrigger>{question}</AccordionTrigger>
             <AccordionContent>{answer}</AccordionContent>
           </AccordionItem>
-        ))}
-      </Accordion>
-    </motion.div>
+        </motion.div>
+      ))}
+    </Accordion>
   );
 };
 
