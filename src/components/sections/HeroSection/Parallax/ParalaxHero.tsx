@@ -41,7 +41,7 @@ export const HeroParallax = () => {
       ref={ref}
       className="relative flex flex-col overflow-hidden  pb-48 [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <HeroContent className="mx-0 w-[50%] self-end pt-48" />
+      <HeroContent className="self-end pt-48" />
       <motion.div
         style={{
           rotateX,
