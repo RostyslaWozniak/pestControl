@@ -1,6 +1,6 @@
-import rodentImg from "/src/assets/images/photos/services-rodent.jpg";
-import insectImg from "/src/assets/images/photos/services-insects.jpg";
-import desinfectionImg from "/src/assets/images/photos/services-desinfection.jpg";
+import rodentImg from "/src/assets/images/photos/services-rodent.webp";
+import insectImg from "/src/assets/images/photos/services-insects.webp";
+import desinfectionImg from "/src/assets/images/photos/services-desinfection.webp";
 export const servicesCardData = [
   {
     id: 1,

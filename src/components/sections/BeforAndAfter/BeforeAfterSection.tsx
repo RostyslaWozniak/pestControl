@@ -2,8 +2,8 @@ import Heading from "../../ui/heading";
 import MaxWidthWraper from "../../MaxWidthWraper";
 import Text from "../../ui/text";
 import Resizable from "./Resizable";
-import image1 from "/src/assets/images/photos/services-desinfection.jpg";
-import image2 from "/src/assets/images/photos/why-us.jpg";
+import image1 from "/src/assets/images/photos/services-desinfection.webp";
+import image2 from "/src/assets/images/photos/why-us.webp";
 
 const images: [{ alt: string; img: string }, { alt: string; img: string }] = [
   { alt: "", img: image1 },

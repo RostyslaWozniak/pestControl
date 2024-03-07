@@ -1,5 +1,5 @@
 import MaxWidthWraper from "../MaxWidthWraper";
-import photo from "../../assets/images/photos/why-us.jpg";
+import photo from "../../assets/images/photos/why-us.webp";
 import { FaCheck } from "react-icons/fa6";
 import Animate from "../Animation/Animate";
 import { smWith } from "../../helpers/globalVariabels";
