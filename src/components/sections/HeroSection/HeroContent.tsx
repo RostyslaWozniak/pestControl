@@ -7,14 +7,14 @@ import { cn } from "../../../lib/cn";
 const HeroContent = ({ className }: { className?: string }) => {
   return (
     <MaxWidthWraper className={cn("flex flex-col ", className)}>
-      <div className="space-y-8 lg:ml-auto lg:w-1/2">
+      <div className="space-y-4 lg:ml-auto lg:w-1/2 lg:space-y-8">
         <Animate direction="x" translate={200}>
-          <h1 className="text-2xl font-medium text-black-75 sm:text-3xl">
+          <h1 className="text-xl font-medium text-black-75 sm:text-3xl">
             Say Goodbye to Pests with Our Expert Solutions
           </h1>
         </Animate>
         <Animate direction="x" translate={200} delay={0.2}>
-          <h2 className="text-5xl font-bold leading-[73px] text-secondary sm:text-6xl ">
+          <h2 className="text-4xl font-bold  text-primary sm:text-6xl ">
             Pest Control Services
           </h2>
         </Animate>
@@ -27,7 +27,7 @@ const HeroContent = ({ className }: { className?: string }) => {
           </p>
         </Animate>
         <Animate direction="y" translate={50} delay={0.6} duration={0.5}>
-          <Button variant="outline" className="mt-2 gap-5 text-secondary">
+          <Button className="mt-2 gap-5">
             Contact <FaPhoneAlt size={20} />
           </Button>
         </Animate>

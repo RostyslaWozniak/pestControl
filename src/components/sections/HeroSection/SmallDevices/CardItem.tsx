@@ -13,10 +13,15 @@ const CardItem = ({ img, title, content, path }: SmCardItemProps) => {
   return (
     <div
       className={cn(
-        "flex cursor-default flex-col overflow-hidden bg-primary sm:flex-row sm:rounded-[50px] sm:border-2 sm:border-background sm:shadow-xl",
+        "flex cursor-default flex-col bg-primary sm:flex-row sm:shadow-xl",
       )}
     >
-      <img src={img} alt={title} className="object-cover sm:w-[50%]" />
+      <img
+        src={img}
+        alt={title}
+        className="mx-auto max-h-[300px] w-full object-cover sm:max-h-full sm:w-[50%]"
+      />
+
       <div className="flex flex-col items-start justify-center gap-5 px-5 py-5 text-background">
         <h3 className="text-2xl font-bold text-background sm:text-3xl">
           {title}

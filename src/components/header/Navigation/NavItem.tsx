@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import Animate from "../../Animation/Animate";
 import { cn } from "../../../lib/cn";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import { lgWidth } from "../../../helpers/globalVariabels";
 
 type NavItemProps = {
   id: number;
@@ -10,9 +12,14 @@ type NavItemProps = {
 };
 
 const NavItem = ({ id, path, name }: NavItemProps) => {
+  const { windowWidth } = useWindowDimensions();
   return (
     <li>
-      <Animate direction="x" delay={id * 0.1} translate={200}>
+      <Animate
+        direction={windowWidth > lgWidth ? "y" : "x"}
+        delay={id * 0.1}
+        translate={windowWidth > lgWidth ? 30 : 200}
+      >
         <NavLink
           onClick={() => scrollTo({ top: 0 })}
           className={cn(
