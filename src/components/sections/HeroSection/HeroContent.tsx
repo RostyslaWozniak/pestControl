@@ -14,7 +14,7 @@ const HeroContent = ({ className }: { className?: string }) => {
           </h1>
         </Animate>
         <Animate direction="x" translate={200} delay={0.2}>
-          <h2 className="text-5xl font-bold leading-[73px] text-primary sm:text-6xl ">
+          <h2 className="text-5xl font-bold leading-[73px] text-secondary sm:text-6xl ">
             Pest Control Services
           </h2>
         </Animate>
@@ -27,7 +27,7 @@ const HeroContent = ({ className }: { className?: string }) => {
           </p>
         </Animate>
         <Animate direction="y" translate={50} delay={0.6} duration={0.5}>
-          <Button className="mt-2 gap-5">
+          <Button variant="outline" className="mt-2 gap-5 text-secondary">
             Contact <FaPhoneAlt size={20} />
           </Button>
         </Animate>

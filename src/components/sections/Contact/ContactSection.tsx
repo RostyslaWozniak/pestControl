@@ -68,16 +68,17 @@ const ContactSection = () => {
           </Text>
           <ul className="flex flex-col space-y-8">
             {contactElements.map(({ id, value, icon, action }) => (
-              <li key={id} className="rounded-full bg-gradient p-[3px]">
-                <div className=" flex items-center space-x-10 rounded-full bg-primary py-1 pl-5 lg:space-x-20">
-                  {icon}
-                  <a
-                    className="font-bold sm:text-2xl sm:font-normal"
-                    href={action}
-                  >
-                    {value}
-                  </a>
-                </div>
+              <li
+                key={id}
+                className="flex items-center space-x-10 rounded-full bg-primary py-1 pl-5 lg:space-x-20"
+              >
+                {icon}
+                <a
+                  className="font-bold sm:text-2xl sm:font-normal"
+                  href={action}
+                >
+                  {value}
+                </a>
               </li>
             ))}
           </ul>

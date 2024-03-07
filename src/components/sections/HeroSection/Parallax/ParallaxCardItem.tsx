@@ -28,11 +28,10 @@ const ParallaxCardItem = ({
   const paralaxX = (id === 1 && 30) || (id === 2 && 1) || (id === 3 && -30);
   return (
     <motion.div
-      key={id}
       style={{
         translateY: useTransform(
           scrollYProgress,
-          [0, 0.2],
+          [0, 0.4],
           [initialY, paralaxY],
         ),
         translateX: useTransform(
@@ -41,9 +40,8 @@ const ParallaxCardItem = ({
           [initialX, paralaxX],
         ),
       }}
-      // whileHover={{ scale: 1.05 }}
-      // transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      // className="hover:z-10"
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       <div
         className={cn(

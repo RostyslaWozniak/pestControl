@@ -36,6 +36,7 @@ export const HeroParallax = () => {
     useTransform(scrollYProgress, [0, 0.2], [-300, 0]),
     springConfig,
   );
+
   return (
     <section
       ref={ref}
@@ -52,7 +53,19 @@ export const HeroParallax = () => {
         }}
         className="relative z-20 justify-self-start"
       >
-        <motion.div className="flex items-center justify-center">
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{
+            x: "-400px",
+            y: "-400px",
+            opacity: 0,
+          }}
+          animate={{
+            x: "0px",
+            y: "0px",
+            opacity: 1,
+          }}
+        >
           {servicesCardData.map((props) => (
             <ParallaxCardItem
               key={props.id}
